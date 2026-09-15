@@ -1,0 +1,1 @@
+// int his we have to just find the lcs and compare wiht the length of string which is min if match then true 

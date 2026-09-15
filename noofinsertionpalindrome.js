@@ -1,0 +1,2 @@
+// in this it is same as minimum number of deletion to make string palindrome in that that are extra we are simply deleting
+//now which are extra just add that simple so number of insertion equal to number of deletion

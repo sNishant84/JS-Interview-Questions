@@ -1,0 +1,2 @@
+// search and element in biotonic array. so for this we have to first find the peak element .when we find that then we have to
+// basically apply binary search in both the half bs=(0,index-1) and bs(index,arr.length-1)
