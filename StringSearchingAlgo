@@ -1,0 +1,63 @@
+Knuth Moris Prat algo -
+
+w='onion';
+prefix - '','o','on','oni','onio','onion'
+proper prefix is the prefix without the word itself.
+suffix is '','s','ns','ons','ions','nions'
+proper suffix is the sufix without the word itself.
+length of longest prefix that is also a sufix means in onions - on is prefix and on is also a sufix .
+this is knowns as lps
+n= onions - [0,0,0,1,2,0]
+
+n=abcdabeabf- [0,0,0,0,1,2,0,1,2,0]
+so we will match the string one by one the point where two doesn't match we will move i pointer to lps[j-1]
+then we again start comparing as soon as the j equal to m we return i-m .
+
+
+function buildlps(){
+
+}
+
+
+function subsctring(haystack,needle){
+    let n=haystack.length;
+    let m=needle.length;
+    let lps[0]=0
+    let i=0;
+    let j=1;
+    while(j<m){
+        if(needle[i]==needle[j]){
+            lps[j]=i+1;
+            i++;
+            j++;
+        }else{
+            if(i==0){
+                lps[j]=0;
+                j++;
+            }else{
+                i=lps[i-1]
+            }
+        }
+    }
+    i=0;
+    j=0;
+    while(i<n){
+        if(haystack[i]==needle[j]){
+            i++;
+            j++;
+        }else{
+            if(j==0){
+                i++;
+            }else{
+                j=lps[j-1];
+            }
+        }
+        if(j==m){
+            return i-m
+        }
+    }
+    return -1;
+}
+
+time complexity - O(n)
+s=O(m)

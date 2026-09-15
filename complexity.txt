@@ -1,0 +1,28 @@
+time complexity
+used to measure efficiency of algorithm in terms of speed, as the input grows.
+
+time complexity != time taken
+time taken depend on the factors like on machine on which you are running. code you have written
+
+speed efficiency when input size grows.
+
+Linear search 
+[2,1,3,5,4,7]
+search(5)
+
+
+
+binary search
+we are dividing the array every two times that's why log2n
+
+Big O notation
+measure the complexity in the worst case.because in the best case all the algorithm is taking similar 
+time. in linear search best case is also 1 and in binary search it is also same
+
+notation is just a symbol.
+
+space complexity
+how much extra space you are using
+
+
+if complexity is O(n2 + n) so it boils down to n2 because it doesnt matter for larger numbers

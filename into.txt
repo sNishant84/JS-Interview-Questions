@@ -1,0 +1,25 @@
+Heaps & Priority Queues
+
+heap are complete binary tree. complete binary tree is a tree when you dont miss any node when you are doing a level order traversal
+
+full binary tree is a tree means all levels are full.
+complete binary tree when nodes are added in a sequence there are no missing node in between.
+
+complexity of finding the largest element in max heap is O(1) and smallest in min heap is O(1).
+insert time is O(logn) and deletion is same time O(logn)
+
+disadvantage - tough to code and tricky.
+
+to find the left child - 2*i+1
+right child - 2*i+2
+parent - (i-1)/2
+it is represented using the array.
+
+operation in heap 
+insert
+extract / delete
+
+parent<=children
+when we are adding children we have to put it so that it should be a complete binary tree.
+extract and delete from the front not any middle child or element. extract will give you the min i am talking about min heap.
+for extracting the last element you have to extract all the elements.

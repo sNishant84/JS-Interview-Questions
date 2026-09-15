@@ -1,61 +1,30 @@
-function intersetion(headA,headB){
-    let set=new Set();
-    while(headB){
-        set.add(headB);
-        headB=headB.next
-    }
-    while(headA){
-        if(set.has(headA)){
-            return headA;
-        }
-        headA=headA.next;
-    }
-    return null;
-}
+function intersection(arr1,arr2){
+    let set2=new Set(arr2);
+      return [...new Set(arr1.filter((x)=>set2.has(x)))] // to spread the set in array.
+  }
+  
 
+  function intersection(arr1,arr2){
+    arr1=arr1.sort((a,b)=>a-b);
+    arr2=arr2.sort((a,b)=>a-b);
+    console.log(arr1,arr2)
+   let i=0;
+   let j=0;
+   let ans=[]
+   while(i<arr1.length && j<arr2.length){
+       if(arr1[i]>arr2[j]){
+           j++;
+       }else if(arr1[i]<arr2[j]){
+           i++
+       }else{
+          ans.push(arr1[i]);
+          i++;
+          j++;
+       }
+   }
+   return ans
 
-// now with two pointer approach 
+ }
 
-first step calculate length of a and b find difference and move the list to that difference check for intersection
-
-function intersection(headA,headB){
-    let n=0;
-    let pa=headA
-    while(headA){
-        n++;
-        pa=pa.next;
-    }
-    let m=0;
-    let pb=headB
-     while(headB){
-        m++;
-        pb=pb.next;
-    }
-    let diff=Math.abs(n-m)
-    if(n>m){
-        temp=headA;
-        headA=headB;
-        headB=temp
-    }
-    for(let i=0;i<diff;i++){
-        headB=headB.next
-    }
-    while(pa!=pb){
-        pa=pa.next;
-        pb=pb.next
-    }
-    return pa;
-}
-
-one more optimised solution is that we can move both pointers from start suppose a reaches null i assigned it to the head of b
-and b reaches null i assign it to a so they both start at the same point without difference in length then we can find the answer
-
-function intersection(headA,headB){
-    let pa=headA;
-    let pb=headB;
-    while(pa!=pb){
-        pa=pa == null ? headB : pa.next
-        pb=pb==null? headA :pb.next
-    }
-    return pa
-}
+  
+  console.log(intersection([1,2,3,2],[2]))

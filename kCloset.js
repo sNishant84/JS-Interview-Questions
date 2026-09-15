@@ -1,18 +1,16 @@
-// in this problem we have to find out the k closet element to a given number. for this we will try to find the element 
-in range from i to i+k. first will find the middle and check the distance from x which lies closer move to left or right 
-according to that.
+//in this question we have to find the k smallest element from the k so for this we can subtract x from the element so we get the smallest
+//ones in that case but we have to choose the heap we will go with the max heap because we pop out the useless we only need important
+// so at the top we have max we pop out thiose remaining are the smallest element which we need. since we are storing it in pair math.abs(x-arr[i]),arr[i].
+// we need to make changes in our heap code also when we are comparing we need to this.heap[currentIndex][1] > this.heap[parentIndex][1] like this
 
-
-function kcloset(arr,x,k){
-    let l=0;
-    let r=arr.length-1;
-    while(l<r){
-        if((arr[m]+k)-x < x-arr[m]){
-            l=m+1
-        }else{
-            r=m // answer can also lies till the middle.
-        }
+function kCloset(arr,k,x){
+let heap =new MaxHeap();
+for(let i=0;i<arr.length;i++){
+    heap.insert([Math.abs(x-arr[i]),arr[i]]);
+    if(heap.size()>k){
+        heap.extractMax();
     }
+}
+return heap.heap.map(pair => pair[1]);
 
-    return arr.slice(l,l+k)
 }
