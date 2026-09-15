@@ -1,0 +1,8 @@
+Binary Search Tree
+is a special type of tree with atmost 2 children.
+
+for evry node - 
+all node of left subtree have smaller value than parent node.
+all node of right subtree have greater value than parent node .
+searching value inside bst is very fast.
+complexity of searching an element inside bst is logn. logn is the height of the tree

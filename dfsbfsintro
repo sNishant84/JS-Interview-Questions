@@ -1,0 +1,12 @@
+
+dfs 
+
+explores a tree by going as deep as possible doing a branch before backtracking.
+preorder , inorder, postorder
+uses stack 
+
+bfs
+
+explores a tree level by level , explores all nodes at current level before moving deeper.
+level order traversal , zig zag traversal.
+uses queue 
